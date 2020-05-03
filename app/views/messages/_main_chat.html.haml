@@ -1,22 +1,24 @@
 .chat-main
-  .main-header
-    .main-header__left-box
-      .main-header__current-group
-      sato
-      .main-header__left-box__member-list
-        Member:
-        .main-header__left-box__member-list__member
-          aaaa
-    = link_to "#" do
-      .main-header__edit-btn
-        Edit
-            
-  .messages
-  .chat-messages
-  .chat-form
-
-  %form.new_message
-    .input-box
-      
-      %input(type="text")/
-      %label(for="")
+  .chat-main__header
+    .chat-main__header__leftbox
+      .chat-main__header__leftbox__currentgroup
+        sato
+      .chat-main__header__leftbox__memberlist
+        Member：
+        .chat-main__header__leftbox__memberlist__member___
+          aaaa   
+    .chat-main__header__lightbox
+      Edit
+  .chat-main__messages
+  .chat-main__form
+    .chat-main__newmessage
+      .chat-main__form__inputboxtext
+        .chat-main__type__a__message
+          %input{:placeholder => "type a message", :type => "text", :class => "input-box__text", :id => "message_content"}/
+          .chat-main__inputbox__image
+            %label.chat-main__fa__image
+              = icon("fas", "image")
+              %input{:class => "input-box__image__file", :type => "file", :name => "message[image]"}/
+      .chat-main__submit__btn
+        Send
+    
