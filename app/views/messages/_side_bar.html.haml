@@ -1,19 +1,19 @@
 .chat-side
-  .side-header
-    .side-header__box
-      .side-header__box__user-name
+  .chat-side__header
+    .chat-side__header__box
+      .chat-side__header__user
         sato
-      .side-header__box__menu
-        .side-header__box__menu__new-group
+      .chat-side__header__menu
+        .chat-side__header__newgroup
           = link_to "#" do
             = icon('fas', 'edit')
-        .side-header__box__menu__edit-user
+        .chat-side__header__edituser
           = link_to "#" do
             = icon('fas', 'cog')
           
-  .groups
-    .group
-      .group__group-name
+  .chat-side__groups
+    .chat-side__group
+      .chat-side__groupname
         aaaaa
-      .group__latest-message
+      .chat-side__groupmessage
         まだメッセージはありません
