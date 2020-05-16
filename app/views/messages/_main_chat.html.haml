@@ -2,23 +2,29 @@
   .chat-main__header
     .chat-main__header__leftbox
       .chat-main__header__leftbox__currentgroup
-        sato
+        = @group.name
       .chat-main__header__leftbox__memberlist
         Member：
+        - @group.users.each do |user|
+          = user.name
         .chat-main__header__leftbox__memberlist__member___
           aaaa   
     .chat-main__header__lightbox
-      Edit
+      = link_to 'Edit', edit_group_path(@group)
+      
+        
   .chat-main__messages
+    = render @messages
   .chat-main__form
     .chat-main__newmessage
       .chat-main__form__inputboxtext
-        .chat-main__type__a__message
-          %input{placeholder: "type a message", type: "text", class: "input-box__text", id: "message_content"}/
-          .chat-main__inputbox__image
-            %label.chat-main__fa__image
-              = icon("fas", "image")
-              %input{class: "input-box__image__file", type: "file", name: "message[image]"}/
-      .chat-main__submit__btn
-        Send
+        = form_for [@group, @message] do |f|
+          .chat-main__type__a__message
+            = f.text_field :content, class: 'input-box__text', placeholder: 'type a message'
+            = f.label :image, class: 'chat-main__fa__image' do
+              = icon('fas', 'image', class: 'icon')
+              = f.file_field :image, class: 'input-box__image__file'
+            = f.submit 'Send', class: 'chat-main__submit__btn'
     
+    
+
