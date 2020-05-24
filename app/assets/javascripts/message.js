@@ -18,8 +18,8 @@ $(function(){
            </div>
            <img src=${message.image} >
          </div>`
-       return html;
-     } else {
+      }
+      else {
        var html =
         `<div class="message">
            <div class="upper-message">
@@ -36,6 +36,7 @@ $(function(){
              </p>
            </div>
          </div>`
+       return html;
      };
    }
   $('#new_message').on('submit', function(e){
@@ -59,6 +60,6 @@ $(function(){
       })
       .fail(function() {
         alert("メッセージ送信に失敗しました");
-      })
+      });
 })
 });
