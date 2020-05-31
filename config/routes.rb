@@ -7,5 +7,8 @@ Rails.application.routes.draw do
     devise_for :users, controllers: {
       registrations: 'users/registrations',sessions: 'users/sessions' 
     }
+    namespace :api do
+      resources :messages, only: :index, defaults: { format: 'json' }
+    end
   end
 end
