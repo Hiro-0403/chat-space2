@@ -14,6 +14,7 @@
 
   a{
     color: white;
+    text-decoration: none;
   }
 
   &__header{
@@ -120,8 +121,32 @@
     padding: 46px 40px;
     background-color: #fafafa;
     overflow: scroll;
-  }
 
+    .upper-message{
+      display: flex;
+      margin-bottom: 10px;
+
+
+      .upper-message__user-name{
+        color: #434a54;
+        font-size: 16px;
+        font-weight: bold;
+      }
+      .upper-message__date{
+        color: #999999;
+        font-size: 12px;
+        margin-left: 10px;
+      }
+    }
+    .lower-message{
+      color: #434a54;
+      font-size: 14px;
+      margin-bottom: 10px;
+      .lower-message__content{
+        padding-bottom: 40px;
+      }
+    }
+  }
   &__form{
     height: 90px;
     padding: 20px 40px;
